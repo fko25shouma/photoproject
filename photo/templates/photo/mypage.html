@@ -1,4 +1,4 @@
-{% extends 'photo\base.html' %}
+{% extends 'photo/base.html' %}
 {% block title %}Mypage{% endblock %}
 
     {% block contents %}
@@ -16,8 +16,8 @@
     <hr>
     {% endif %}
 
-    {% include "photo\photos_list.html" %}
+    {% include "photo/photos_list.html" %}
 
-    {% include "photo\pagination.html" %}
+    {% include "photo/pagination.html" %}
 
     {% endblock %}
