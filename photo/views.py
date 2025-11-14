@@ -18,7 +18,7 @@ class IndexView(ListView):
     '''トップページのビュー
     '''
     # index.htmlをレンダリングする
-    template_name ='photo\index.html'
+    template_name ='photo/index.html'
     # モデルBlogPostのオブジェクトにorder_by()を適用して
     # 投稿日時の降順で並べ替える
     queryset = PhotoPost.objects.order_by('-posted_at')
@@ -42,7 +42,7 @@ class CreatePhotoView(CreateView):
     # forms.pyのPhotoPostFormをフォームクラスとして登録
     form_class = PhotoPostForm
     # レンダリングするテンプレート
-    template_name = "photo\post_photo.html"
+    template_name = "photo/post_photo.html"
     # フォームデータ登録完了後のリダイレクト先
     success_url = reverse_lazy('photo:post_done')
 
@@ -76,10 +76,10 @@ class PostSuccessView(TemplateView):
       template_name: レンダリングするテンプレート
     '''
     # index.htmlをレンダリングする
-    template_name ='photo\post_success.html'
+    template_name ='photo/post_success.html'
 
 class CategoryView(ListView):
-    template_name = 'photo\index.html'
+    template_name = 'photo/index.html'
     paginate_by = 9
 
     def get_queryset(self):
@@ -89,7 +89,7 @@ class CategoryView(ListView):
         return categories
         
 class UserView(ListView):
-    template_name = 'photo\index.html'
+    template_name = 'photo/index.html'
     paginate_by = 9
     
     def get_queryset(self):
@@ -100,11 +100,11 @@ class UserView(ListView):
         return user_list
 
 class DetailView(DetailView):
-    template_name = 'photo\detail.html'
+    template_name = 'photo/detail.html'
     model = PhotoPost
 
 class MypageView(ListView):
-    template_name = 'photo\mypage.html'
+    template_name = 'photo/mypage.html'
     paginate_by = 9
 
     def get_queryset(self):
@@ -116,7 +116,7 @@ class MypageView(ListView):
 
 class PhotoDeleteView(DeleteView):
     model = PhotoPost
-    template_name ='photo\photo_delete.html'
+    template_name ='photo/photo_delete.html'
     success_url = reverse_lazy('photo:mypage')
 
     def delete(self, request, *args, **kwargs):
