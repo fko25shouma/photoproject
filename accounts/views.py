@@ -10,7 +10,7 @@ class SignUpView(CreateView):
     # forms.pyで定義したフォームのクラス
     form_class = CustomUserCreationForm
     # レンダリングするテンプレート
-    template_name = "accounts\signup.html"
+    template_name = "accounts/signup.html"
     # サインアップ完了後のリダイレクト先のURLパターン
     success_url = reverse_lazy('accounts:signup_success')
 
@@ -39,4 +39,4 @@ class SignUpSuccessView(TemplateView):
     
     '''
     # レンダリングするテンプレート
-    template_name = "accounts\signup_success.html"
+    template_name = "accounts/signup_success.html"
