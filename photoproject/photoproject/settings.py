@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--)ntt)id^^t-pp6t)*&&%0_=+7$4n&5=+68hwp9)f*-oeb7!h8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['fko25shouma.pythonanywhere.com']
+ALLOWED_HOSTS = ['fko25shouma.pythonanywhere.com',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
     #photoアプリを追加する
     'photo.apps.PhotoConfig',
     #accountアプリを追加
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
+    #memoアプリを追加
+    'memoapp.apps.MemoappConfig',
 ]
 
 MIDDLEWARE = [

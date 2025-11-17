@@ -1,0 +1,9 @@
+<h1>掲示板もどき</h1>
+
+<a href="{% url 'memo_create' %}">投稿する</a>
+
+<ul>
+{% for memo in memos %}
+    <li>{{ memo.title }} - {{ memo.created_at }}</li>
+{% endfor %}
+</ul>

@@ -72,6 +72,8 @@
                        class="text-white">パスワードのリセット</a></li>
                 <li><a href="mailto:admin@example.com"
                        class="text-white">Email me</a></li>
+                <li><a href="{% url 'memo_list' %}"
+                      class="text-white">掲示板（めちゃくちゃシンプル）</a></li>
                 {% else %}
                 <!-- ログイン状態ではない場合のメニュー-->
                 <li><a href="{% url 'accounts:signup' %}"
@@ -80,6 +82,8 @@
                        class="text-white">ログイン</a></li>
                 <li><a href="mailto:admin@example.com"
                        class="text-white">Email me</a></li>
+                <li><a href="{% url 'memo_list' %}"
+                      class="text-white">掲示板（めちゃくちゃシンプル）</a></li>
                 {% endif %}
               </ul>
             </div>

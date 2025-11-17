@@ -12,6 +12,8 @@ urlpatterns = [
 
     path('', include('accounts.urls')),
 
+    path('memo/', include('memoapp.urls'), name = "memoapp"),
+
     # パスワードリセットのためのURLパターン
     # PasswordResetConfirmViewがプロジェクトのurls.pyを参照するのでここに記載
     # パスワードリセット申し込みページ
