@@ -8,7 +8,9 @@ def memo_list(request):
 def memo_create(request):
     if request.method == 'POST':
         title = request.POST.get('title')
-        content = request.POST.get('content')
-        Memo.objects.create(title=title, content=content)
+        nickname = request.POST.get('nickname')
+
+        Memo.objects.create(title=title, nickname=nickname)
         return redirect('memo_list')
+
     return render(request, 'memo/memo_create.html')
