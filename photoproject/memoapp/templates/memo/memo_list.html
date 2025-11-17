@@ -1,9 +1,28 @@
-<h1>掲示板もどき</h1>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>掲示板もどき</title>
+    <link rel="stylesheet" href="{% static 'css/sns.css' %}">
+</head>
+<body>
+    <h1>掲示板もどき</h1>
 
-<a href="{% url 'memo_create' %}">つぶやく</a>
+    <!-- 「つぶやく」ボタンにクラスを付ける -->
+    <a href="{% url 'memo_create' %}" class="btn-create">つぶやく</a>
 
-<ul>
-{% for memo in memos %}
-    <li>{{ memo.nickname }} : {{ memo.title }} - {{ memo.created_at }}</li>
-{% endfor %}
-</ul>
+    <!-- メモ一覧 -->
+    <ul>
+        {% for memo in memos %}
+        <li>
+            <strong>{{ memo.nickname }} : {{ memo.title }}</strong>
+            <span class="date">{{ memo.created_at }}</span>
+        </li>
+        {% empty %}
+        <li>まだ何もつぶやかれてないよ
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
