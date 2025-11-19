@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Memo
 
 def memo_list(request):
@@ -14,3 +14,8 @@ def memo_create(request):
         return redirect('memo_list')
 
     return render(request, 'memo/memo_create.html')
+
+def memo_delete(request, pk):
+    memo = get_object_or_404(Memo, pk=pk)
+    memo.delete()
+    return redirect('memo_list')
