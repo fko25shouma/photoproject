@@ -19,9 +19,6 @@
             <strong>{{ memo.nickname }} :</strong><br>
             <p>{{ memo.content12 |linebreaksbr }}</p>
             <span class="date">{{ memo.created_at }}</span>
-
-
-            <!-- ▼ 削除ボタン追加 ▼ -->
             <a href="{% url 'memo_delete' memo.pk %}" class="btn-delete">削除</a>
         </li>
         {% empty %}
