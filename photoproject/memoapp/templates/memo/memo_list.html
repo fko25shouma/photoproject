@@ -20,6 +20,7 @@
             {% endif %}
             <br>
             <span class="date">{{ memo.created_at }}</span>
+            <a href="{% url 'memo_delete' memo.pk %}" class="btn-delete">削除</a>
         </li>
         {% empty %}
         <li>まだ何もつぶやかれてないよ</li>
