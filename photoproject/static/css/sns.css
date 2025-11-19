@@ -1,19 +1,17 @@
-/* 全体のスタイル */
+
 body {
-    font-family: "Meiryo", sans-serif;
+    font-family: "HGS創英角ﾎﾟｯﾌﾟ体, Yu Gothic UI", sans-serif;
     background: #f5f5f5;
     margin: 0;
     padding: 20px;
 }
 
-/* タイトル */
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 25px;
 }
 
-/* 「つぶやく」ボタン */
 .btn-create {
     display: inline-block;
     padding: 10px 18px;
@@ -29,7 +27,7 @@ h1 {
     background: #3578c5;
 }
 
-/* メモ一覧 */
+
 ul {
     list-style: none;
     padding: 0;
@@ -39,7 +37,6 @@ ul {
     margin-right: auto;
 }
 
-/* メモカード */
 li {
     background: #fff;
     padding: 14px 18px;
@@ -50,13 +47,11 @@ li {
     font-size: 15px;
 }
 
-/* ニックネーム */
 li strong {
     font-weight: bold;
     color: #444;
 }
 
-/* 投稿日時 */
 li .date {
     color: #888;
     font-size: 13px;
