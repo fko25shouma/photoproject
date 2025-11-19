@@ -1,7 +1,8 @@
 <h1>作成</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="text" name="nickname" placeholder="ニックネームを入力"><br>
-    <textarea id="content12" name="content12" rows="4" cols="50" placeholder="つぶやく内容"></textarea>
+    <textarea id="content12" name="content12" rows="4" cols="50" placeholder="つぶやく内容"></textarea><br>
+    <input type="file" name="image"><br><br>
     <button type="submit">つぶやく</button>
 </form>

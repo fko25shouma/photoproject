@@ -1,5 +1,3 @@
-<!-- memo_list.html -->
-
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -10,16 +8,18 @@
 </head>
 <body>
     <h1>SNSもどき（試作）</h1>
-
+    <!-- 作成ボタン -->
     <a href="{% url 'memo_create' %}" class="btn-create">つぶやく</a>
-
     <ul>
         {% for memo in memos %}
         <li>
             <strong>{{ memo.nickname }} :</strong><br>
-            <p>{{ memo.content12 |linebreaksbr }}</p>
+            <p>{{ memo.content12|linebreaksbr }}</p>
+            {% if memo.image %}
+                <img src="{{ memo.image.url }}" alt="投稿画像" style="max-width: 300px; margin-top: 10px;">
+            {% endif %}
+            <br>
             <span class="date">{{ memo.created_at }}</span>
-            <a href="{% url 'memo_delete' memo.pk %}" class="btn-delete">削除</a>
         </li>
         {% empty %}
         <li>まだ何もつぶやかれてないよ</li>

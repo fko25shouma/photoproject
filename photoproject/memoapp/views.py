@@ -7,13 +7,19 @@ def memo_list(request):
 
 def memo_create(request):
     if request.method == 'POST':
-        content12 = request.POST.get('content12')
         nickname = request.POST.get('nickname')
+        content12 = request.POST.get('content12')
+        image = request.FILES.get('image')  
 
-        Memo.objects.create(content12=content12, nickname=nickname)
+        Memo.objects.create(
+            nickname=nickname,
+            content12 =content12,
+            image=image  
+        )
         return redirect('memo_list')
 
     return render(request, 'memo/memo_create.html')
+
 
 def memo_delete(request, pk):
     memo = get_object_or_404(Memo, pk=pk)
