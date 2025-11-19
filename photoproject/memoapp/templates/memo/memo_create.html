@@ -2,6 +2,6 @@
 <form method="post">
     {% csrf_token %}
     <input type="text" name="nickname" placeholder="ニックネームを入力"><br>
-    <input type="text" name="title" placeholder="内容"><br>
+    <textarea id="content12" name="content12" rows="4" cols="50" placeholder="つぶやく内容"></textarea>
     <button type="submit">つぶやく</button>
 </form>
