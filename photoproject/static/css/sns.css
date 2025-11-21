@@ -27,6 +27,35 @@ h1 {
     background: #3578c5;
 }
 
+.button14 {
+  background-color: #ff861c;
+  border: solid 2px #ff861c;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1em;
+  display: inline-block;
+}
+.button14:hover {
+  color: #ffffff;
+}
+.icon-spin {
+  margin-right: 8px;
+  display: inline-block;
+}
+/* ボタンにホバーした時、アイコンだけ回転 */
+.button14:hover .icon-spin {  
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 ul {
     list-style: none;
